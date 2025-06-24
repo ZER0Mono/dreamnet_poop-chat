@@ -1,69 +1,43 @@
+'use client'
+
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
-import { AuthControls } from "@/components/auth-controls";
-import { Icons } from "@/components/icons";
-import { StripeButton } from "@/components/stripe-button";
-import { buttonVariants } from "@/components/ui/button";
-import { auth } from "@/lib/auth";
+const HomePage = () => {
+  const { data: agents, isLoading } = useQuery({
+    queryKey: ['agents'], queryFn: () => {
+      return fetch('https://agents-api.doodles.app/agents')
+        .then((res) => res.json())
+        .then((data) => data);
+    }
+  })
 
-const HomePage = async () => {
-  const session = await auth();
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <>
-      <header className="w-full border-b">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="font-mono text-lg font-bold">
-            next-starter
+    <div className="min-h-screen flex flex-col items-center justify-start bg-black mt-10" style={{ fontFamily: 'Tahoma, Geneva, Verdana, sans-serif' }}>
+      {/* AIM-style header */}
+      <div className="w-full max-w-md bg-blue-700 text-white text-lg font-bold py-3 px-4 rounded-t shadow flex items-center justify-between">
+        <span>Buddy List</span>
+        <span className="text-xs font-normal opacity-80">AIM</span>
+      </div>
+      {/* Buddy list container */}
+      <div className="w-full max-w-md bg-white border border-blue-300 rounded-b shadow-md overflow-hidden">
+        {agents?.agents.map((agent: { id: string; name: string; description: string }) => (
+          <Link href={`/agents/${agent.id}/chat`} key={agent.id} className="no-underline">
+            <div className="flex items-center gap-3 p-4 border-b last:border-b-0 hover:bg-blue-100 cursor-pointer transition-colors">
+              <span className="inline-block w-3 h-3 rounded-full bg-green-500 border border-white shadow" title="Online"></span>
+              <div>
+                <h2 className="text-base font-bold text-blue-900 leading-tight">{agent.name}</h2>
+                <p className="text-xs text-gray-600">{agent.description}</p>
+              </div>
+            </div>
           </Link>
-          <div className="flex items-center gap-2">
-            <AuthControls session={session} />
-          </div>
-        </div>
-      </header>
-      <section className="container mt-10 flex flex-col items-center gap-3 text-center md:absolute md:top-1/2 md:left-1/2 md:mt-0 md:-translate-x-1/2 md:-translate-y-1/2">
-        <h1 className="mb-1 font-mono text-4xl leading-tight font-extrabold tracking-tighter [word-spacing:-0.5rem] md:text-5xl">
-          <span className="bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-transparent">
-            Next.js
-          </span>{" "}
-          starter template
-        </h1>
-        <p className="text-muted-foreground max-w-2xl md:text-lg">
-          A Next.js starter template, packed with features like TypeScript,
-          Tailwind CSS, Next-auth, Eslint, Stripe, testing tools and more.
-          Jumpstart your project with efficiency and style.
-        </p>
-        <div className="mt-2 flex gap-4">
-          {session ? (
-            <StripeButton />
-          ) : (
-            <Link
-              href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
-              target="_blank"
-              className={buttonVariants({ size: "lg" })}
-            >
-              Get started
-            </Link>
-          )}
-          <Link
-            href="https://github.com/Skolaczk/next-starter"
-            target="_blank"
-            className={buttonVariants({ variant: "outline", size: "lg" })}
-          >
-            <Icons.github /> Github
-          </Link>
-        </div>
-      </section>
-      <footer className="text-muted-foreground absolute bottom-3 w-full text-center text-sm">
-        © {new Date().getFullYear()} By{" "}
-        <Link
-          href="https://michalskolak.pl"
-          className={buttonVariants({ variant: "link", className: "!p-0" })}
-        >
-          Michał Skolak
-        </Link>
-      </footer>
-    </>
+        ))}
+      </div>
+    </div>
   );
 };
 
