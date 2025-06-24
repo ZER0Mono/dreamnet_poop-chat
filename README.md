@@ -59,11 +59,6 @@ _The chat window, styled after classic AIM conversations._
 3. **Open your browser:**
    Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
-## Customization
-
-- Update the agent API endpoint in `src/app/page.tsx` and `src/app/agents/[agentId]/chat/page.tsx` to use your own data source.
-- Replace the images in the `/images/` directory with your own screenshots for documentation.
-
 ## License
 
 MIT
