@@ -1,11 +1,11 @@
-# AIM-Inspired Chat App Example
+## PoopieChat is a playful, Doodles-inspired chat frontend that brings the iconic Poopie hair/head trait to life through a custom, expressive UI. It transforms the chat experience into something uniquely colorful, fun, and instantly recognizable within the Doodles universe. 
 
-This project is a modern web chat application inspired by the classic AOL Instant Messenger (AIM) interface. It demonstrates how to build a nostalgic, retro-themed chat UI using Next.js, React, and Tailwind CSS, with real-time agent interaction.
+## based on the AIM-Inspired Chat App Example
 
 ## Features
 
-- AIM-style Buddy List home screen
-- AIM-style chat window with online indicator, retro fonts, and colored usernames
+- Poopie-style Agend Select Screen
+- Poopie-style chat window with various costumizations
 - Responsive, accessible, and easy to customize
 - Powered by Next.js, React, and Tailwind CSS
 
@@ -36,15 +36,15 @@ Replace these values with your own credentials as needed.
 
 ## Screenshots
 
-### Buddy List (Home Page)
+### PoopieChat (Home Page)
 
-![Buddy List Screenshot](/images/home.png)
-_The AIM-inspired Buddy List, showing all available agents._
+![PoopieChat Screenshot](/images/home.png)
+_The Poopie-inspired chat overview, showing all available agents._
 
-### Chat Screen
+### PoopieChat Screen
 
 ![Chat Screen Screenshot](/images/chat.png)
-_The chat window, styled after classic AIM conversations._
+_The chat window, inspired by the Poopie trait._
 
 ## Getting Started
 
