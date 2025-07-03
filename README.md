@@ -1,6 +1,6 @@
-## PoopieChat is a playful, Doodles-inspired chat frontend that brings the iconic poopie trait to life with a fun custom, expressive and instantly recognizable UI.
+# PoopieChat
 
-# derived from the AIM-Inspired Chat App Example
+## PoopieChat is a playful, Doodles-inspired chat frontend that brings the iconic poopie trait to life with a fun custom, expressive and instantly recognizable UI.
 
 ## Features
 
@@ -66,3 +66,7 @@ https://dreamnet-poopiechat.vercel.app/
 ## License
 
 MIT
+
+## Source
+derived from the AIM-Inspired Chat App Example by lgtmrobo
+https://github.com/lgtmrobo/dreamnet-aim-ai-chat-clone/
