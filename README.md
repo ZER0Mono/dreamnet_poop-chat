@@ -59,6 +59,10 @@ _The chat window, inspired by the Poopie trait._
 3. **Open your browser:**
    Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
+## Live-Demo
+_See PoopieChat live in demo mode._
+https://dreamnet-poopiechat.vercel.app/
+
 ## License
 
 MIT
