@@ -1,6 +1,6 @@
-## PoopieChat is a playful, Doodles-inspired chat frontend that brings the iconic Poopie hair/head trait to life through a custom, expressive UI. It transforms the chat experience into something uniquely colorful, fun, and instantly recognizable within the Doodles universe. 
+## PoopieChat is a playful, Doodles-inspired chat frontend that brings the iconic poopie trait to life with a fun custom, expressive and instantly recognizable UI.
 
-## based on the AIM-Inspired Chat App Example
+# derived from the AIM-Inspired Chat App Example
 
 ## Features
 
